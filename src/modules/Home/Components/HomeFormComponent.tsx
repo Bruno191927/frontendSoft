@@ -9,19 +9,28 @@ import * as Yup from 'yup';
 import { useMutation } from "@tanstack/react-query"
 import { getUser } from "../Services/UserApi"
 import { userStore } from "../Store/UserStore"
+import { useState } from "react"
 
 
 
 const HomeFormComponent = () => {
   const setUserStore = userStore((state) => state.setUser);
-  const userInfo = userStore((state) => state.user)
   const navigate = useNavigate();
+  const [contact,setContact] = useState<ContactInformation>({
+    acceptComercialPolicy:false,
+    acceptPrivacityPolicy:false,
+    cellphone:'',
+    document:'',
+    documentType:''
+  })
   const getUserMutation = useMutation({
     mutationFn: getUser,
     onSuccess: (data: PersonalInformation) => {
+      console.log(data);
       setUserStore({
         personal: data,
-        ...userInfo
+        contact: contact
+      
       });
       navigate('/plans')
     },
@@ -52,10 +61,7 @@ const HomeFormComponent = () => {
         initialValues={initialValues}
         onSubmit={(values, actions) => {
           actions.setSubmitting(false)
-          setUserStore({
-            ...userInfo,
-            contact: values
-          });
+          setContact(values);
           getUserMutation.mutate();
         }}
         validationSchema={formSchema}
