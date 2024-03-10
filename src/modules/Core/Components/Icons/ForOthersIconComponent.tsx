@@ -5,12 +5,12 @@ const ForOthersIconComponent = () => {
             <path d="M43.425 28.575C41.9565 27.1067 40.0856 26.1067 38.0488 25.7017C36.012 25.2966 33.9009 25.5046 31.9823 26.2994C30.0637 27.0941 28.4239 28.4399 27.2702 30.1666C26.1165 31.8933 25.5007 33.9233 25.5007 36C25.5007 38.0767 26.1165 40.1067 27.2702 41.8334C28.4239 43.5601 30.0637 44.9059 31.9823 45.7006C33.9009 46.4954 36.012 46.7034 38.0488 46.2983C40.0856 45.8933 41.9565 44.8933 43.425 43.425C44.4001 42.45 45.1736 41.2924 45.7014 40.0184C46.2291 38.7444 46.5007 37.379 46.5007 36C46.5007 34.621 46.2291 33.2556 45.7014 31.9816C45.1736 30.7076 44.4001 29.55 43.425 28.575ZM42 37.5H37.5V42H34.5V37.5H30V34.5H34.5V30H37.5V34.5H42V37.5Z" fill="url(#paint1_linear_12_156295)" />
             <defs>
                 <linearGradient id="paint0_linear_12_156295" x1="3.00098" y1="1.59143" x2="28.0678" y2="54.4398" gradientUnits="userSpaceOnUse">
-                    <stop offset="0.272135" stop-color="#34263B" />
-                    <stop offset="0.658079" stop-color="#13172C" />
+                    <stop offset="0.272135" stopColor="#34263B" />
+                    <stop offset="0.658079" stopColor="#13172C" />
                 </linearGradient>
                 <linearGradient id="paint1_linear_12_156295" x1="26.0501" y1="27.1481" x2="43.3526" y2="44.4506" gradientUnits="userSpaceOnUse">
-                    <stop offset="0.35" stop-color="#F7052D" />
-                    <stop offset="0.85" stop-color="#CA5AFA" />
+                    <stop offset="0.35" stopColor="#F7052D" />
+                    <stop offset="0.85" stopColor="#CA5AFA" />
                 </linearGradient>
             </defs>
         </svg>

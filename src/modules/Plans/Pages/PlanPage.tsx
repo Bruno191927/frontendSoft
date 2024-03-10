@@ -8,10 +8,13 @@ import StepperComponent from "../Components/StepperComponent"
 import { PlanDto, PlanListDto } from "../Interface/PlanDto"
 import { useMutation } from "@tanstack/react-query"
 import { getPlans } from "../Services/PlanApi"
+import ReturnStepperComponent from "../Components/ReturnStepperComponent"
 import { userStore } from "../../Home/Store/UserStore"
+import { useNavigate } from "react-router-dom"
 
 const PlanPage = () => {
   const userInfo = userStore((state) => state.user)
+  const navigate = useNavigate()
   const [quoteSelect, setQuoteSelect] = useState<number>(0);
   const [applyDiscount,setApplyDiscount] = useState<boolean>(false);
   const [plans,setPlans] = useState<PlanDto[]>([]);
@@ -36,6 +39,7 @@ const PlanPage = () => {
     <div className="plan">
       <NavbarComponent/>
       <StepperComponent active={1}/>
+      <ReturnStepperComponent step={1} onClick={() => {navigate('/')}}/>
       <div className="plan__container">
         <div className="plan__select">
           <p className="plan__title">{userInfo.personal?.name} ¿Para quién deseas cotizar?</p>
@@ -49,7 +53,7 @@ const PlanPage = () => {
       <div className="plan__frame">
         <div className="plan__frame__container">
           {
-            plans.map((plan) => <PlanCardComponent plan={plan} applyDiscount={applyDiscount} icon={<PlanCardHomeIconComponent/>}/>)
+            plans.map((plan,index) => <PlanCardComponent key={index} plan={plan} applyDiscount={applyDiscount} icon={<PlanCardHomeIconComponent/>}/>)
           }
         </div>
       </div>

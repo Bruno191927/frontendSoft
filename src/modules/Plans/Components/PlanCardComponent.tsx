@@ -11,7 +11,7 @@ export interface PlanCardComponentProp {
 
 const PlanCardComponent = ({ plan, applyDiscount, icon }: PlanCardComponentProp) => {
     const setUserStore = userStore((state) => state.setUser);
-    const userInfo = userStore((state) => state.user)
+    const userInfo = userStore((state) => state.user);
     const navigate = useNavigate();
     const total = plan.price * (applyDiscount ? 0.95 : 1)
     return (
@@ -30,7 +30,7 @@ const PlanCardComponent = ({ plan, applyDiscount, icon }: PlanCardComponentProp)
                         </div>
                     </div>
                     <div className="card__plan__body">
-                        {plan.description.map((description) => (<p className="card__plan__body__description">{description}</p>))}
+                        {plan.description.map((description,index) => (<p key={index} className="card__plan__body__description">{description}</p>))}
                     </div>
                 </div>
                 <div className="card__plan__button">

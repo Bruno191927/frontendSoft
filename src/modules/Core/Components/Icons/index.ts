@@ -8,6 +8,7 @@ import ForOthersIconComponent from './ForOthersIconComponent';
 import PlanCardHomeIconComponent from './PlanCardHomeIconComponent';
 import PlanCardHospitalIconComponent from './PlanCardHospitalIconComponent';
 import PeopleIconComponent from './PeopleIconComponent';
+import ArrowBackIconComponent from './ArrowBackIconComponent';
 
 export {
     LogoIconComponent,
@@ -19,5 +20,6 @@ export {
     ForOthersIconComponent,
     PlanCardHomeIconComponent,
     PlanCardHospitalIconComponent,
-    PeopleIconComponent
+    PeopleIconComponent,
+    ArrowBackIconComponent
 }
