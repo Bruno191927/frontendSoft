@@ -1,6 +1,7 @@
 export interface UserInformation{
-    personal:PersonalInformation;
-    contact:ContactInformation;
+    personal?:PersonalInformation;
+    contact?:ContactInformation;
+    plan?:PlanInformation
 }
 
 export interface ContactInformation{
@@ -15,4 +16,10 @@ export interface PersonalInformation {
     name:     string;
     lastName: string;
     birthDay: string;
+}
+
+export interface PlanInformation{
+    name:string;
+    price:number;
+    forMe:boolean;
 }

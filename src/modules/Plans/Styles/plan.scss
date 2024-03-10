@@ -6,9 +6,10 @@
       margin-top: 24px;
       &__container{
         width: 928px;
-        height: 687px;
+        padding: 30px 30px;
         display: flex;
         gap: 32px;
+        overflow-x: scroll;
       }
     }
     &__container{
@@ -31,6 +32,7 @@
       }
     }
     &__title{
+      padding-top: 12px;
       font-weight: bold;
       font-size: 40px;
       line-height: 48px;
@@ -44,6 +46,7 @@
     &__description{
       font-size: 16px;
       line-height: 28px;
+      padding-bottom: 12px;
       letter-spacing: 0.1px;
       text-align: center;
       @media only screen and (max-width: 384px){
@@ -111,9 +114,14 @@
     &__container{
         padding: 68px 32px 48px 32px;
         width: 288px;
+        height: 725px;
         box-sizing: border-box;
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__button{
+      align-self: flex-end;
     }
     &__header{
         border-bottom: 1px solid rgba(215, 219, 245, 1);

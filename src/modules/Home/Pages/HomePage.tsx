@@ -2,7 +2,7 @@ import FooterComponent from "../../Core/Components/Footer/FooterComponent"
 import NavbarComponent from "../../Core/Components/Navbar/NavbarComponent"
 import BannerComponent from "../Components/BannerComponent"
 import ContentComponent from "../Components/ContentComponent"
-import FormComponent from "../Components/FormComponent"
+import HomeFormComponent from "../Components/HomeFormComponent"
 
 const HomePage = () => {
   return (
@@ -11,7 +11,7 @@ const HomePage = () => {
         <div className='home__sections'>
           <BannerComponent/>
           <ContentComponent/>
-          <FormComponent/>
+          <HomeFormComponent/>
         </div>
         <FooterComponent/>
     </main>

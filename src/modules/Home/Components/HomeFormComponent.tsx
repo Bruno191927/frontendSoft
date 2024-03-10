@@ -3,17 +3,37 @@ import ButtonComponent from "../../Core/Components/Buttons/ButtonComponent"
 import FormInputCheckboxComponent from "../../Core/Components/Inputs/FormInputCheckboxComponent"
 import FormInputComponent from "../../Core/Components/Inputs/FormInputComponent"
 import FormSelectComponent from "../../Core/Components/Inputs/FormInputSelectComponent"
-import { Form, Formik } from "formik"
-import { ContactInformation } from "../Interface/User"
+import { ErrorMessage, Form, Formik } from "formik"
+import { ContactInformation, PersonalInformation } from "../Interface/User"
 import * as Yup from 'yup';
+import { userStore } from "../Store/UserStore"
+import { useMutation } from "@tanstack/react-query"
+import { getUser } from "../Services/UserApi"
 
 
 
-const FormComponent = () => {
+const HomeFormComponent = () => {
+  const setUserStore = userStore((state) => state.setUser);
+  const userInfo = userStore((state) => state.user)
+  const navigate = useNavigate();
+  const getUserMutation = useMutation({
+    mutationFn:getUser,
+    onSuccess: (data:PersonalInformation) => {
+      setUserStore({
+        personal:data,
+        ...userInfo
+      });
+      navigate('/plans')
+    },
+    onError: (error) => {
+      console.log(error);
+    }
+  })
+
   const initialValues: ContactInformation = {
     cellphone: '',
     document: '',
-    documentType: '',
+    documentType: 'dni',
     acceptComercialPolicy: false,
     acceptPrivacityPolicy: false
   }
@@ -26,28 +46,25 @@ const FormComponent = () => {
     acceptComercialPolicy: Yup.bool().required().oneOf([true], 'Debes aceptar la politica de privacidad'),
     acceptPrivacityPolicy: Yup.bool().required().oneOf([true], 'Debes aceptar la politicas de comunicacion comercial'),
   })
-
-  const navigate = useNavigate();
   return (
     <Formik
       initialValues={initialValues}
       onSubmit={(values, actions) => {
-        console.log(values);
-        actions.setSubmitting(false);
-        navigate('/plans')
+        actions.setSubmitting(false)
+        setUserStore({
+          ...userInfo,
+          contact: values
+        });
+        getUserMutation.mutate();
       }}
       validationSchema={formSchema}
     >
-      {({errors}) => (
+      {() => (
         <Form>
           <div className="home__form">
             <p className="home__form__description">Tú eliges cuánto pagar. Ingresa tus datos, cotiza y recibe nuestra asesoría. 100% online.</p>
-            <p>{errors.acceptComercialPolicy}</p>
-            <p>{errors.acceptPrivacityPolicy}</p>
-            <p>{errors.cellphone}</p>
-            <p>{errors.document}</p>
-            <p>{errors.documentType}</p>
             <FormInputComponent label="Celular" name="cellphone" placeholder="5130216147" />
+            <ErrorMessage name="cellphone"/>
             <FormSelectComponent
               label="Nro. de documento"
               items={[
@@ -58,10 +75,14 @@ const FormComponent = () => {
               name="document"
               nameSelect="documentType"
             />
+            <ErrorMessage name="document"/>
+            <ErrorMessage name="documentType"/>
             <FormInputCheckboxComponent label="Acepto la Política de Privacidad" name="acceptComercialPolicy" />
+            <ErrorMessage name="acceptComercialPolicy"/>
             <FormInputCheckboxComponent label="Acepto la Política Comunicaciones Comerciales" name="acceptPrivacityPolicy" />
+            <ErrorMessage name="acceptPrivacityPolicy"/>
             <a href="#" target="_blank" rel="terminos" className="home__form__link">Aplican Términos y Condiciones.</a>
-            <ButtonComponent name="Cotiza Aqui" buttonType="submit"/>
+            <ButtonComponent name="Cotiza Aqui" buttonType="submit" />
           </div>
         </Form>
       )}
@@ -69,4 +90,4 @@ const FormComponent = () => {
   )
 }
 
-export default FormComponent
+export default HomeFormComponent
