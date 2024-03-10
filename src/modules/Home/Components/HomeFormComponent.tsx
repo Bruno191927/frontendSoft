@@ -26,7 +26,6 @@ const HomeFormComponent = () => {
   const getUserMutation = useMutation({
     mutationFn: getUser,
     onSuccess: (data: PersonalInformation) => {
-      console.log(data);
       setUserStore({
         personal: data,
         contact: contact
