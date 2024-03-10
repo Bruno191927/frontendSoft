@@ -25,7 +25,7 @@
       flex-direction: column;
       justify-content: start;
       align-items: center;
-      @media only screen and (max-width: 384px){
+      @media only screen and (max-width: 480px){
         width: 336px;
         height: 512px;
         padding: 0px 24px;
@@ -38,7 +38,7 @@
       line-height: 48px;
       letter-spacing: -0.6px;
       text-align: center;
-      @media only screen and (max-width: 384px){
+      @media only screen and (max-width: 480px){
         font-size: 28px;
         text-align: start;
       }
@@ -49,14 +49,14 @@
       padding-bottom: 12px;
       letter-spacing: 0.1px;
       text-align: center;
-      @media only screen and (max-width: 384px){
+      @media only screen and (max-width: 480px){
         text-align: start;
       }
     }
     &__quote{
       display: flex;
       gap: 40px;
-      @media only screen and (max-width: 384px){
+      @media only screen and (max-width: 480px){
         flex-direction: column;
         gap: 24px;
         margin-bottom: 24px;
@@ -80,7 +80,7 @@
     height: 212px;
     padding: 16px 24px 40px 24px;
     box-sizing: border-box;
-    @media only screen and (max-width: 384px){
+    @media only screen and (max-width: 480px){
       width: 336px;
       height: 160px;
     }
@@ -91,7 +91,7 @@
     &__body{
       display: flex;
       flex-direction: column;
-      @media only screen and (max-width: 384px){
+      @media only screen and (max-width: 480px){
         flex-direction: row;
         flex-wrap: wrap;
         gap: 8px;
@@ -238,7 +238,7 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  @media only screen and (max-width: 384px){
+  @media only screen and (max-width: 480px){
     display: none;
   }
   &__item{
@@ -287,7 +287,7 @@
   padding: 50px 216px;
   align-items: center;
   gap: 8px;
-  @media only screen and (max-width: 384px){
+  @media only screen and (max-width: 480px){
     padding: 16px 24px;
     border-bottom: 1px solid rgba(215, 219, 245, 1);
   }
@@ -304,7 +304,7 @@
     letter-spacing: 0.4px;
     text-align: center;
     display: block;
-    @media only screen and (max-width: 384px){
+    @media only screen and (max-width: 480px){
       display: none;
     }
   }
@@ -315,7 +315,7 @@
     line-height: 16px;
     letter-spacing: 0.8px;
     color: rgba(20, 25, 56, 1);
-    @media only screen and (max-width: 384px){
+    @media only screen and (max-width: 480px){
       display: block;
     }
   }
@@ -323,7 +323,7 @@
     display: none;
     height: 6px;
     border-radius: 20px;
-    @media only screen and (max-width: 384px){
+    @media only screen and (max-width: 480px){
       display: block;
     }
     &--background{
@@ -348,7 +348,7 @@
     align-items: center;
     &__container{
         width: 928px;
-        @media only screen and (max-width: 384px){
+        @media only screen and (max-width: 480px){
           width: 336px;
         }
     }
@@ -362,7 +362,7 @@
       text-align: start;
       padding-top: 40px;
         padding-bottom: 40px;
-      @media only screen and (max-width: 384px){
+      @media only screen and (max-width: 480px){
         font-size: 32px;
         text-align: center;
         line-height: 40px;
