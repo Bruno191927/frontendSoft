@@ -80,6 +80,7 @@ const HomeFormComponent = () => {
               placeholder="30216147"
               name="document"
               nameSelect="documentType"
+              type="number"
             />
             <ErrorMessage name="document" children={(err) => (<p className="error">{err}</p>)}/>
             <ErrorMessage name="documentType" children={(err) => (<p className="error">{err}</p>)}/>

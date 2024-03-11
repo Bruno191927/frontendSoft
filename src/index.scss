@@ -11,8 +11,10 @@ p{
   margin: 0;
 }
 
-input[type="number"] {
-  appearance: none !important;
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
+
+input[type=number] { -moz-appearance:textfield; }
