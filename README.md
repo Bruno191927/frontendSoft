@@ -5,14 +5,14 @@ Este proyecto es un desafío que consiste en desarrollar una aplicación web uti
 ## Estructura de Carpetas
 
 El proyecto está organizado en modulos, cada uno representando una funcionalidad específica de la aplicación. La estructura de carpetas del módulo se divide de la siguiente manera:
-modules
-└── module
-  ├── Components
-  ├── Interface
-  ├── Pages
-  ├── Services
-  ├── Store
-  └── Styles
+* modules
+    - module
+      - Components
+      - Interface
+      - Pages
+      - Services
+      - Store
+      - Styles
 
 ### Descripción de las Carpetas
 
