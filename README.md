@@ -1,30 +1,44 @@
-# React + TypeScript + Vite
+# Desafío - Descripción del Proyecto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es un desafío que consiste en desarrollar una aplicación web utilizando tecnologia React. El objetivo principal es demostrar habilidades en el diseño y desarrollo del frontend
 
-Currently, two official plugins are available:
+## Estructura de Carpetas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+El proyecto está organizado en modulos, cada uno representando una funcionalidad específica de la aplicación. La estructura de carpetas del módulo se divide de la siguiente manera:
+modules
+└── module
+  ├── Components
+  ├── Interface
+  ├── Pages
+  ├── Services
+  ├── Store
+  └── Styles
 
-## Expanding the ESLint configuration
+### Descripción de las Carpetas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Components**: Contiene componentes reutilizables de React utilizados en el módulo.
+- **Interface**: Contiene interfaces TypeScript que definen la estructura de datos utilizada en el módulo.
+- **Pages**: Contiene las páginas principales del módulo, cada una representando una vista específica de la aplicación.
+- **Services**: Contiene servicios y utilidades utilizados para interactuar con el backend u otras operaciones asincrónicas.
+- **Store**: Contiene el almacenamiento de estado global, como Redux stores, contextos de React, etc.
+- **Styles**: Contiene archivos de estilos, utilizando la metodología BEM (Block, Element, Modifier) para una mejor organización y mantenimiento del CSS.
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Ejecución del Proyecto
+
+Para ejecutar el proyecto, sigue estos pasos:
+
+1. Instala las dependencias del proyecto:
+
+```bash
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Corre el proyecto
+
+```bash
+npm run dev
+```
+
+## LINK DEL PROYECTO DESPLEGADO
+[https://frontend-soft.vercel.app/](https://frontend-soft.vercel.app/)

@@ -69,8 +69,8 @@ const HomeFormComponent = () => {
           <Form>
 
             <p className="home__form__description">Tú eliges cuánto pagar. Ingresa tus datos, cotiza y recibe nuestra asesoría. 100% online.</p>
-            <FormInputComponent label="Celular" name="cellphone" placeholder="5130216147" />
-            <ErrorMessage name="cellphone" />
+            <FormInputComponent label="Celular" type="number" name="cellphone" placeholder="5130216147" />
+            <ErrorMessage name="cellphone" children={(err) => (<p className="error">{err}</p>)}/>
             <FormSelectComponent
               label="Nro. de documento"
               items={[
@@ -81,12 +81,12 @@ const HomeFormComponent = () => {
               name="document"
               nameSelect="documentType"
             />
-            <ErrorMessage name="document" />
-            <ErrorMessage name="documentType" />
+            <ErrorMessage name="document" children={(err) => (<p className="error">{err}</p>)}/>
+            <ErrorMessage name="documentType" children={(err) => (<p className="error">{err}</p>)}/>
             <FormInputCheckboxComponent label="Acepto la Política de Privacidad" name="acceptComercialPolicy" />
-            <ErrorMessage name="acceptComercialPolicy" />
+            <ErrorMessage name="acceptComercialPolicy" children={(err) => (<p className="error">{err}</p>)}/>
             <FormInputCheckboxComponent label="Acepto la Política Comunicaciones Comerciales" name="acceptPrivacityPolicy" />
-            <ErrorMessage name="acceptPrivacityPolicy" />
+            <ErrorMessage name="acceptPrivacityPolicy" children={(err) => (<p className="error">{err}</p>)}/>
             <a href="#" target="_blank" rel="terminos" className="home__form__link">Aplican Términos y Condiciones.</a>
             <ButtonComponent name="Cotiza Aqui" buttonType="submit" />
 

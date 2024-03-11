@@ -11,9 +11,10 @@ interface FormSelectComponentProp{
   name:string;
   nameSelect:string;
   label:string;
+  type?: 'text' | 'number'
 }
 
-const FormSelectComponent = ({items,placeholder,name,nameSelect,label}:FormSelectComponentProp) => {
+const FormSelectComponent = ({items,placeholder,name,nameSelect,label,type = 'text'}:FormSelectComponentProp) => {
   return (
     <div className="form-select">
       <div className="form-select__select">
@@ -25,7 +26,7 @@ const FormSelectComponent = ({items,placeholder,name,nameSelect,label}:FormSelec
       </div>
       <div className="form-select__input">
         <label className="form-input__label">{label}</label>
-        <Field type="text" name={name} className="form-input__input" placeholder={placeholder}/>
+        <Field type={type} name={name} className="form-input__input" placeholder={placeholder}/>
       </div>
     </div>
   )

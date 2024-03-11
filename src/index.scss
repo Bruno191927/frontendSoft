@@ -10,3 +10,9 @@ body{
 p{
   margin: 0;
 }
+
+input[type="number"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+}
